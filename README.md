@@ -6,13 +6,13 @@
 ```
 ssh -p 22 ab@192.168.0.121
 ```
-### Обновите систему.
+##### Обновите систему.
 ```
 sudo apt update
 sudo apt upgrade
 sudo reboot
 ```
-### Установите зависимости из файла ```install_packages_target.sh```
+##### Установите зависимости из файла ```install_packages_target.sh```
 ```
 cd ~
 wget https://raw.githubusercontent.com/stimandrew/Qml6glsinkOrangePi5/main/install_packages_target.sh
