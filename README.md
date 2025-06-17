@@ -53,7 +53,15 @@ qt-cmake --version
 ```
 ldconfig -p | grep Qt6
 ```
-
+--------------------------------------------------------
+### Установка ```Gstreamer-plugins-good``` из исходников
+##### Скачиваем Gstreamer
+```
+cd ~
+git clone https://github.com/GStreamer/gstreamer.git
+cd gstreamer
+git checkout 1.24
+```
 ##### Разрешить orangepi использовать sudo rsync без пароля
 ```
 echo "orangepi ALL=(ALL) NOPASSWD: /usr/bin/rsync" | sudo tee -a /etc/sudoers
