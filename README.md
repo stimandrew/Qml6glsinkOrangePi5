@@ -50,11 +50,11 @@ qt-cmake --version
 sudo ln -s /home/$USER/Qt6.5.5/bin/qmake /usr/local/bin/qmake
 sudo ln -s /home/$USER/Qt6.5.5/bin/qt-cmake /usr/local/bin/qt-cmake
 sudo ln -s /home/$USER/Qt6.5.5/lib /usr/local/lib/qt6
-sudo ldconfig
 ```
 Добавить путь к библиотекам. (Измените имя пользователя на то, которое у вас в системе)
 ```
 echo '/home/ab/Qt6.5.5/lib' | sudo tee /etc/ld.so.conf.d/qt6_5_5.conf
+sudo ldconfig
 ```
 Проверка путей
 ```
