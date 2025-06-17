@@ -15,7 +15,7 @@ sudo reboot
 Установите зависимости из файла install_packages_target.sh
 ```
 cd ~
-wget https://raw.githubusercontent.com/stimandrew/CrossCompileQtForOrangePi5Ultra/main/install_packages_target.sh
+wget https://github.com/stimandrew/Qml6glsinkOrangePi5/blob/main/install_packages_target.sh
 chmod +x install_packages_target.sh
 sudo ./install_packages_target.sh
 ```
