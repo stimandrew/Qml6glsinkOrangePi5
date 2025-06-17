@@ -54,7 +54,7 @@ sudo ldconfig
 ```
 Проверка путей
 ```
-ldconfig -p | grep Qt6
+find / -name libQt6Core*
 ```
 
 Разрешить orangepi использовать sudo rsync без пароля
