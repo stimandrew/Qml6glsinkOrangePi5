@@ -52,9 +52,13 @@ sudo ln -s /home/$USER/Qt6.5.5/bin/qt-cmake /usr/local/bin/qt-cmake
 sudo ln -s /home/$USER/Qt6.5.5/lib /usr/local/lib/qt6
 sudo ldconfig
 ```
+Добавить путь к библиотекам
+```
+echo '/home/$USER/Qt6.5.5/lib' | sudo tee /etc/ld.so.conf.d/qt6_5_5.conf
+```
 Проверка путей
 ```
-find / -name libQt6Core*
+ldconfig -p | grep Qt6
 ```
 
 Разрешить orangepi использовать sudo rsync без пароля
