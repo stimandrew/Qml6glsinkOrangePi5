@@ -79,7 +79,15 @@ ninja -C build -j2
 sudo ninja -C build install
 echo 'export GST_PLUGIN_PATH=/usr/local/lib/aarch64-linux-gnu/gstreamer-1.0/:$GST_PLUGIN_PATH' >> ~/.bashrc
 source ~/.bashrc
+echo 'GST_PLUGIN_PATH=/usr/local/lib/aarch64-linux-gnu/gstreamer-1.0/' | sudo tee -a /etc/environment
+source /etc/environment
 ```
+##### Проверяем GST_PLUGIN_PATH
+```
+echo $GST_PLUGIN_PATH
+```
+Должен быть следующий вывод: ```/usr/local/lib/aarch64-linux-gnu/gstreamer-1.0/:/usr/local/lib/aarch64-linux-gnu/gstreamer-1.0/```
+Если вывод отличается, то перегазгрузите устройство ```sudo reboot```
 ##### Проверяем доступность qml6glsink
 ```
 gst-inspect-1.0 qml6glsink
