@@ -42,8 +42,9 @@ sudo ldconfig
 ```
 qmake --version
 pkg-config --modversion Qt6Core
+qt-cmake --version
 ```
-Должно вывести ```QMake version 3.1 Using Qt version 6.5.5 in /home/ab/Qt6.5.5/lib``` и ```6.5.5``` соответственно.
+Должно вывести ```QMake version 3.1 Using Qt version 6.5.5 in /home/ab/Qt6.5.5/lib```,```6.5.5``` и ```cmake version 3.28.3``` соответственно.
 
 Разрешить orangepi использовать sudo rsync без пароля
 ```
