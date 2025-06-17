@@ -19,10 +19,10 @@ wget https://github.com/stimandrew/Qml6glsinkOrangePi5/blob/main/install_package
 chmod +x install_packages_target.sh
 sudo ./install_packages_target.sh
 ```
-Создайте папку для установки qt6.
+Скачайте архив Qt 6.5.5 для Orange pi 5.
 ```
-sudo mkdir /usr/local/qt6
-sudo mkdir /opt/vc
+cd ~/Downloads
+wget https://github.com/stimandrew/Qml6glsinkOrangePi5/releases/download/v1.0.0/Qt6.5.5_arm.tar.gz
 ```
 Предоставьте полный доступ к папке, используемой для развертывания, из Qt Creator. 
 ```
