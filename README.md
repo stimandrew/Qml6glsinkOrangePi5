@@ -87,7 +87,7 @@ source /etc/environment
 echo $GST_PLUGIN_PATH
 ```
 Должен быть следующий вывод: ```/usr/local/lib/aarch64-linux-gnu/gstreamer-1.0/:/usr/local/lib/aarch64-linux-gnu/gstreamer-1.0/```
-Если вывод отличается, то перегазгрузите устройство ```sudo reboot```
+Если вывод отличается, то перезагрузите устройство ```sudo reboot```
 ##### Проверяем доступность qml6glsink
 ```
 gst-inspect-1.0 qml6glsink
