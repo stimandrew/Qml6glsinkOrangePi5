@@ -30,52 +30,11 @@ mkdir ~/Qt6.5.5
 cd ~/Qt6.5.5
 tar -xf ~/Downloads/Qt6.5.5_arm.tar.gz
 ```
-Предоставьте полный доступ к папке, используемой для развертывания, из Qt Creator. 
+Чтобы система и пакеты находили Qt, добавьте его в пути ```PATH```, ```LD_LIBRARY_PATH``` И ```PKG_CONFIG_PATH```.
 ```
 sudo chmod 777 /usr/local/bin
 ```
-Запомните версии gcc (13.3.0), ld(2.42) и ldd (2.39). Исходный код той же версии следует загрузить для последующей сборки кросс-компилятора.
-```
-gcc --version
-ld --version
-ldd --version
-```
-![Снимок экрана от 2025-06-09 10-58-06](https://github.com/user-attachments/assets/8c074426-8e31-4038-bbc0-b9408e3698e8)
 
-```
-ab@ab-orangepi:~$ gcc --version
-ld --version
-ldd --version
-gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
-Copyright (C) 2023 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-GNU ld (GNU Binutils for Ubuntu) 2.42
-Copyright (C) 2024 Free Software Foundation, Inc.
-This program is free software; you may redistribute it under the terms of
-the GNU General Public License version 3 or (at your option) a later version.
-This program has absolutely no warranty.
-ldd (Ubuntu GLIBC 2.39-0ubuntu8.4) 2.39
-Copyright (C) 2024 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-Written by Roland McGrath and Ulrich Drepper.
-
-```
-
-Откройте ~/.bashrc в редакторе nano.
-```
-nano ~/.bashrc
-```
-Добавьте следующий фрагмент кода в конец файла ~/.bashrc.
-```
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/qt6/lib/
-```
-Обновите внесенные изменения.
-```
-source ~/.bashrc
-```
 Разрешить orangepi использовать sudo rsync без пароля
 ```
 echo "orangepi ALL=(ALL) NOPASSWD: /usr/bin/rsync" | sudo tee -a /etc/sudoers
