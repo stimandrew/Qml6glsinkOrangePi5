@@ -62,7 +62,29 @@ git clone https://github.com/GStreamer/gstreamer.git
 cd gstreamer
 git checkout 1.24
 ```
+##### Конфигурируем gst-plugins-good
+```
+cd gstreamer/subprojects/gst-plugins-good/
+meson setup build \
+    -Dqt6=enabled \
+    -Dprefix=/usr/local \
+    -Dpkg_config_path=/home/ab/Qt6.5.5/lib/pkgconfig
+```
+##### Собираем gst-plugins-good
+```
+ninja -C build -j2
+```
+##### Устанавливаем и настраиваем gst-plugins-good
+```
+sudo ninja -C build install
+echo 'export GST_PLUGIN_PATH=/usr/local/lib/aarch64-linux-gnu/gstreamer-1.0/:$GST_PLUGIN_PATH' >> ~/.bashrc
+source ~/.bashrc
+```
+##### Проверяем доступность qml6glsink
+```
+gst-inspect-1.0 qml6glsink
+```
 ##### Разрешить orangepi использовать sudo rsync без пароля
 ```
-echo "orangepi ALL=(ALL) NOPASSWD: /usr/bin/rsync" | sudo tee -a /etc/sudoers
+echo "ab ALL=(ALL) NOPASSWD: /usr/bin/rsync" | sudo tee -a /etc/sudoers
 ```
