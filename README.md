@@ -24,6 +24,12 @@ sudo ./install_packages_target.sh
 cd ~/Downloads
 wget https://github.com/stimandrew/Qml6glsinkOrangePi5/releases/download/v1.0.0/Qt6.5.5_arm.tar.gz
 ```
+Разархивировать архив Qt6.5.5_arm.tar.gz в папку ~/Qt6.5.5.
+```
+mkdir ~/Qt6.5.5
+cd ~/Qt6.5.5
+tar -xf ~/Downloads/Qt6.5.5_arm.tar.gz
+```
 Предоставьте полный доступ к папке, используемой для развертывания, из Qt Creator. 
 ```
 sudo chmod 777 /usr/local/bin
