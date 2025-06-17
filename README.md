@@ -36,7 +36,14 @@ echo 'export PATH="/home/$USER/Qt6.5.5/bin:$PATH"' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH="/home/$USER/Qt6.5.5/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc
 echo 'export PKG_CONFIG_PATH="/home/$USER/Qt6.5.5/lib/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc
 source ~/.bashrc
+sudo ldconfig
 ```
+Проверим настройки ```qmake``` как системный.
+```
+qmake --version
+pkg-config --modversion Qt6Core
+```
+Должно вывести ```QMake version 3.1 Using Qt version 6.5.5 in /home/ab/Qt6.5.5/lib``` и ```6.5.5``` соответственно.
 
 Разрешить orangepi использовать sudo rsync без пароля
 ```
