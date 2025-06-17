@@ -36,6 +36,10 @@ echo 'export PATH="/home/$USER/Qt6.5.5/bin:$PATH"' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH="/home/$USER/Qt6.5.5/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc
 echo 'export PKG_CONFIG_PATH="/home/$USER/Qt6.5.5/lib/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc
 source ~/.bashrc
+```
+##### Добавить путь к библиотекам. (Измените имя пользователя на то, которое у вас в системе)
+```
+echo '/home/ab/Qt6.5.5/lib' | sudo tee /etc/ld.so.conf.d/qt6_5_5.conf
 sudo ldconfig
 ```
 ##### Проверим настройки ```qmake``` как системный.
@@ -45,17 +49,6 @@ pkg-config --modversion Qt6Core
 qt-cmake --version
 ```
 Должно вывести ```QMake version 3.1 Using Qt version 6.5.5 in /home/ab/Qt6.5.5/lib```,```6.5.5``` и ```cmake version 3.28.3``` соответственно.
-##### Создание симлинков в системные папки
-```
-sudo ln -s /home/$USER/Qt6.5.5/bin/qmake /usr/local/bin/qmake
-sudo ln -s /home/$USER/Qt6.5.5/bin/qt-cmake /usr/local/bin/qt-cmake
-sudo ln -s /home/$USER/Qt6.5.5/lib /usr/local/lib/qt6
-```
-##### Добавить путь к библиотекам. (Измените имя пользователя на то, которое у вас в системе)
-```
-echo '/home/ab/Qt6.5.5/lib' | sudo tee /etc/ld.so.conf.d/qt6_5_5.conf
-sudo ldconfig
-```
 ##### Проверка путей
 ```
 ldconfig -p | grep Qt6
