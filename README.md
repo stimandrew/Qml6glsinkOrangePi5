@@ -12,7 +12,7 @@ sudo apt update
 sudo apt upgrade
 sudo reboot
 ```
-Установите зависимости из файла install_packages_target.sh
+Установите зависимости из файла ```install_packages_target.sh```
 ```
 cd ~
 wget https://raw.githubusercontent.com/stimandrew/Qml6glsinkOrangePi5/main/install_packages_target.sh
@@ -24,15 +24,18 @@ sudo ./install_packages_target.sh
 cd ~/Downloads
 wget https://github.com/stimandrew/Qml6glsinkOrangePi5/releases/download/v1.0.0/Qt6.5.5_arm.tar.gz
 ```
-Разархивировать архив Qt6.5.5_arm.tar.gz в папку ~/Qt6.5.5.
+Разархивировать архив ```Qt6.5.5_arm.tar.gz``` в папку ```~/Qt6.5.5```.
 ```
 mkdir ~/Qt6.5.5
 cd ~/Qt6.5.5
 tar -xf ~/Downloads/Qt6.5.5_arm.tar.gz
 ```
-Чтобы система и пакеты находили Qt, добавьте его в пути ```PATH```, ```LD_LIBRARY_PATH``` И ```PKG_CONFIG_PATH```.
+Чтобы система и пакеты находили Qt, добавьте его в пути ```PATH```, ```LD_LIBRARY_PATH``` и ```PKG_CONFIG_PATH```.
 ```
-sudo chmod 777 /usr/local/bin
+echo 'export PATH="/home/$USER/Qt6.5.5/bin:$PATH"' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH="/home/$USER/Qt6.5.5/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc
+echo 'export PKG_CONFIG_PATH="/home/$USER/Qt6.5.5/lib/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 Разрешить orangepi использовать sudo rsync без пароля
