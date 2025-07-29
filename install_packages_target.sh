@@ -98,7 +98,7 @@ sudo apt-get install -y gdb-multiarch
 echo "--------------------------------------"    
 echo "Установка Clang"    
 echo "--------------------------------------"    
-sudo apt-get install -y clang libclang-dev
+sudo apt-get install -y clang libclang-dev llvm
 
 echo "--------------------------------------"    
 echo "Установка Nodejs!"
