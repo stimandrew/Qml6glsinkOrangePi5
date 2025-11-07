@@ -85,7 +85,7 @@ qmake --version
 pkg-config --modversion Qt6Core
 qt-cmake --version
 ```
-Должно вывести ```QMake version 3.1 Using Qt version 6.8.3 in /home/ab/Qt6.8.3/lib```,```6.8.3``` и ```cmake version 3.28.3``` соответственно.
+Должно вывести ```QMake version 3.1 Using Qt version 6.8.3 in /home/ab/Qt6.8.3/lib```,```6.8.3``` и ```cmake version 3.31.6``` соответственно.
 ##### Проверка путей
 ```
 ldconfig -p | grep Qt6
