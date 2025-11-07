@@ -19,6 +19,7 @@ wget https://raw.githubusercontent.com/stimandrew/Qml6glsinkOrangePi5/main/insta
 chmod +x install_packages_target.sh
 sudo ./install_packages_target.sh
 ```
+#### Установка Qt 6.5.5
 ##### Скачайте архив Qt 6.5.5 для Orange pi 5.
 ```
 cd ~/Downloads
@@ -49,6 +50,42 @@ pkg-config --modversion Qt6Core
 qt-cmake --version
 ```
 Должно вывести ```QMake version 3.1 Using Qt version 6.5.5 in /home/ab/Qt6.5.5/lib```,```6.5.5``` и ```cmake version 3.28.3``` соответственно.
+##### Проверка путей
+```
+ldconfig -p | grep Qt6
+```
+--------------------------------------------------------
+#### Установка Qt 6.8.3
+##### Скачайте архив Qt 6.8.3 для Orange pi 5.
+```
+cd ~/Downloads
+wget https://github.com/stimandrew/Qml6glsinkOrangePi5/releases/download/v1.1.0/Qt6.8.3_arm.tar.gz
+```
+##### Разархивировать файл ```Qt6.8.3_arm.tar.gz``` в папку ```~/Qt6.8.3```.
+```
+mkdir ~/Qt6.8.3
+cd ~/Qt6.8.3
+tar -xf ~/Downloads/Qt6.8.3_arm.tar.gz
+```
+##### Чтобы система и пакеты находили Qt, добавьте его в пути ```PATH```, ```LD_LIBRARY_PATH``` и ```PKG_CONFIG_PATH```.
+```
+echo 'export PATH="/home/$USER/Qt6.8.3/bin:$PATH"' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH="/home/$USER/Qt6.8.3/lib:$LD_LIBRARY_PATH"' >> ~/.bashrc
+echo 'export PKG_CONFIG_PATH="/home/$USER/Qt6.8.3/lib/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+##### Добавить путь к библиотекам. (Измените имя пользователя на то, которое у вас в системе)
+```
+echo '/home/ab/Qt6.8.3/lib' | sudo tee /etc/ld.so.conf.d/qt6_8_3.conf
+sudo ldconfig
+```
+##### Проверим настройки ```qmake``` как системный.
+```
+qmake --version
+pkg-config --modversion Qt6Core
+qt-cmake --version
+```
+Должно вывести ```QMake version 3.1 Using Qt version 6.8.3 in /home/ab/Qt6.8.3/lib```,```6.8.3``` и ```cmake version 3.28.3``` соответственно.
 ##### Проверка путей
 ```
 ldconfig -p | grep Qt6
